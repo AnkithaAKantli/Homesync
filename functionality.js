@@ -195,12 +195,6 @@ function renderTable(data) {
       qtyInput.value = qty !== null ? qty : "";
       qtyInput.disabled = true;
 
-      // const amountInput = document.createElement("input");
-      // amountInput.type = "number";
-      // amountInput.value = amount;
-      // amountInput.step = "0.01";
-      // amountInput.disabled = true;
-
       const editButton = document.createElement("button");
       editButton.textContent = "Edit";
       editButton.classList.add("edit-button");
@@ -248,6 +242,12 @@ function renderTable(data) {
 }
 
 
+
+
+
+
+
+// Existing code...
 
 document.getElementById("submitButton").addEventListener("click", () => {
   const updatedItems = Array.from(
@@ -310,4 +310,28 @@ document.getElementById("submitButton").addEventListener("click", () => {
     .catch((error) =>
       console.error("Error sending data to the server:", error)
     );
+});
+
+// Fetch products and render in table
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("http://localhost:3000/products")
+      .then(response => response.json())
+      .then(data => {
+          const productsTableBody = document.querySelector("#productsTable tbody");
+          data.forEach(product => {
+              const row = document.createElement("tr");
+
+              const descriptionCell = document.createElement("td");
+              const quantityCell = document.createElement("td");
+
+              descriptionCell.textContent = product.Items;
+              quantityCell.textContent = product.Quantity;
+
+              row.appendChild(descriptionCell);
+              row.appendChild(quantityCell);
+
+              productsTableBody.appendChild(row);
+          });
+      })
+      .catch(error => console.error("Error fetching products:", error));
 });
