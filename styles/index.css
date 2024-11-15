@@ -1,1 +1,366 @@
+body {
+    background-color: #000; /* Dark background */
+    color: #fff; /* White text for better contrast */
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+}
+
+footer {
+    padding: 40px 0;
+    color: #fff;
+}
+
+footer h4 {
+    color: rgb(236, 26, 255);
+    text-shadow: 0 0 10px rgb(236, 26, 255), 0 0 20px rgb(236, 26, 255), 0 0 30px rgb(236, 26, 255);
+    font-size: 4rem; /* Increased font size */
+    margin-bottom: 20px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer li {
+    margin-bottom: 15px;
+    font-size: 1.5rem; /* Increased font size */
+    width: 100%;
+    display: block;
+    color: rgb(227, 227, 203);
+}
+
+footer a {
+    color: rgb(255, 255, 86);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    display: block;
+    padding: 10px 0;
+    width: 100%;
+}
+
+footer a:hover {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 20px rgb(231, 226, 180);
+}
+
+.chat-bot-container {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 10px;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+.b-example-divider {
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+}
+
+.bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.btn-bd-primary {
+    --bd-violet-bg: #712cf9;
+    --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--bd-violet-bg);
+    --bs-btn-border-color: var(--bd-violet-bg);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #6528e0;
+    --bs-btn-hover-border-color: #6528e0;
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #5a23c8;
+    --bs-btn-active-border-color: #5a23c8;
+}
+
+.bd-mode-toggle {
+    z-index: 1500;
+}
+
+.bd-mode-toggle .dropdown-menu .active .bi {
+    display: block !important;
+}
+
+/* Table Styles */
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #3a3a3a;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: #ccc;
+    
+}
+
+td {
+    background-color: #2a2a2a;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #3a3a3a;
+    border: 1px solid #0ff;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #0ff;
+}
+
+.edit-button {
+    background-color: #ff00ff;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.edit-button:hover {
+    background-color: #ff1493;
+    box-shadow: 0 0 10px #ff1493, 0 0 20px #ff1493;
+}
+
+.save-button {
+    display: none;
+}
+
+/* Chatbot */
+#redirectButton {
+    padding: 10px 20px;
+    background-color: #0ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight:bolder;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 500;
+    animation: pop 1.5s infinite;
+    width: 13rem;
+    height: 4rem;
+}
+
+#redirectButtonToCapture {
+    padding: 10px 20px;
+    background-color: #0ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight:bolder;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 500;
+    animation: pop 1.5s infinite;
+    width: 13rem;
+    height: 4rem;
+}
+
+@keyframes pop {
+    0%, 100% {
+        transform: scale(1);
+        background-color: rgb(6, 168, 168);
+        color: white;
+    }
+    50% {
+        transform: scale(1.1);
+        background-color: #0ff;
+        color: #000;
+    }
+}
+.drop-section > .col{
+  background-color: #1a1a1a;
+}
+.text-bg-dark {
+    background-color: #1a1a1a;
+    /* padding: 20px; */
+    border-radius: 10px;
+    box-shadow: 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #0ff;
+}
+
+.header-section h1 {
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    padding: 2rem;
+}
+
+.drop-section {
+    display: flex;
+    justify-content: space-around;
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px #0ff;
+}
+
+.cloud-icon img {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.drop-section span {
+    display: block;
+    color: #fff;
+    margin: 10px 0;
+    font-size: 1.2rem;
+    text-shadow: 0 0 5px #fff;
+}
+
+.file-selector {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.file-selector:hover {
+    background-color: #0056b3;
+    box-shadow: 0 0 10px #007bff, 0 0 20px #007bff;
+}
+
+.file-selector-input {
+    display: none;
+}
+
+.drop-here {
+    color: #ff0;
+    font-size: 1.5rem;
+    text-shadow: 0 0 10px #ff0, 0 0 20px #ff0, 0 0 30px #ff0;
+    padding: 20px;
+    border: 2px dashed #ff0;
+    border-radius: 10px;
+}
+
+.list-section {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #0ff;
+}
+
+.list-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #0ff;
+    text-shadow: 0 0 5px #0ff;
+}
+
+.list {
+    color: #fff;
+}
+#submitButton {
+  /* Your regular button styles */
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  /* Neon effect */
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+#submitButton:hover {
+  box-shadow: 0 0 20px #0ff, 0 0 40px #0ff, 0 0 60px #0ff;
+}
+/* Video Background */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Title Styles */
+.col-md-6 {
+    position: relative;
+    z-index: 2; /* Ensure the title is above the video */
+    color: #fff;
+}
+#title > h1{
+  font-size: 6rem;
+
+}
+/* Other Styles */
+/* Add your other styles here */
 
