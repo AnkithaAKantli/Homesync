@@ -61,7 +61,7 @@ app.post("/save-response", (req, res) => {
     jsonData.receipts.forEach((receipt) => {
       const { ReceiptID, Date, Vendor, TotalAmount, Items } = receipt;
       connection.query(
-        INSERT INTO Receipts (ReceiptID, Date, Vendor, TotalAmount) VALUES (?, ?, ?, ?),
+        `INSERT INTO Receipts (ReceiptID, Date, Vendor, TotalAmount) VALUES (?, ?, ?, ?)`,
         [ReceiptID, Date, Vendor, TotalAmount],
         (err) => {
           if (err) {
@@ -72,7 +72,7 @@ app.post("/save-response", (req, res) => {
           Items.forEach((item) => {
             const { Description, Quantity, Amount } = item;
             connection.query(
-              INSERT INTO ReceiptItems (ReceiptID, Description, Quantity, Amount) VALUES (?, ?, ?, ?),
+              `INSERT INTO ReceiptItems (ReceiptID, Description, Quantity, Amount) VALUES (?, ?, ?, ?)`,
               [ReceiptID, Description, Quantity, Amount],
               (err) => {
                 if (err) {
@@ -105,7 +105,7 @@ app.post("/save-data", (req, res) => {
   updatedData.forEach((item) => {
     const { description, qty } = item;
     connection.query(
-      INSERT INTO Inventory (Items, Quantity) VALUES (?, ?) ON DUPLICATE KEY UPDATE Quantity = VALUES(Quantity),
+      `INSERT INTO Inventory (Items, Quantity) VALUES (?, ?) ON DUPLICATE KEY UPDATE Quantity = Quantity + VALUES(Quantity)`,
       [description, qty],
       (err) => {
         if (err) {
@@ -149,5 +149,5 @@ app.get("/products", (req, res) => {
 
 // Start the server
 app.listen(port, () => {
-  console.log(Server running at http://localhost:${port});
+  console.log(`Server running at http://localhost:${port}`);
 });
