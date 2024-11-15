@@ -1,0 +1,221 @@
+{
+  "ocr_type": "receipts",
+  "request_id": "P_36.255.14.9_m3issis6_k4v",
+  "ref_no": "oct_python_123",
+  "file_name": "Grocery-Sample-Receipts-6a54382fcf73a5020837f5360ab5a57b.png",
+  "request_received_on": 1731678708246,
+  "success": true,
+  "image_width": 330,
+  "image_height": 780,
+  "image_rotation": 0,
+  "recognition_completed_on": 1731678708512,
+  "receipts": [
+    {
+      "merchant_name": "APPROVAL#\n3326544 REF#\n131231331",
+      "merchant_address": "TRANS ID -",
+      "merchant_phone": "+1 564-646-4616",
+      "merchant_website": null,
+      "merchant_tax_reg_no": null,
+      "merchant_company_reg_no": null,
+      "region": null,
+      "mall": null,
+      "country": "US",
+      "state": "ID",
+      "city": "TRANS",
+      "receipt_no": "5646464616",
+      "date": "2020-10-07",
+      "time": null,
+      "items": [
+        {
+          "amount": 10.99,
+          "category": null,
+          "description": "SUGAR",
+          "flags": "",
+          "qty": null,
+          "remarks": null,
+          "tags": null,
+          "unitPrice": null
+        }
+      ],
+      "currency": "USD",
+      "total": 78.09,
+      "subtotal": 70.99,
+      "tax": 7.1,
+      "service_charge": null,
+      "tip": null,
+      "payment_method": null,
+      "payment_details": null,
+      "credit_card_type": null,
+      "credit_card_number": null,
+      "ocr_text": "       M MEGA BIGBOX\n          1142384989090\n           NEEDS STORE\n             CHICAGO\n ST# 123414224 OP#56465465464\n TE#545522224 TR# 131\n SUGAR               $ 10.99\n COOKING OIL         $60\n          SUBTOTAL     $70.99\n          TAX:         $7.1\n          TOTAL        $78.09\n          TEND         $ 3.00\n ACCOUNT#    9874564\n APPROVAL#   3326544\n REF#   131231331\n TRANS ID - 5646464616\n VALIDATION- 16545\n PAYMENT SERVICE- AMEX ** 8888\n TERMINAL#5\n      10/07/2020   05:09 PM\n      CHANGE DUE     -75.09\n          # ITEMS SOLD 3\n             TC# 325\n      10/07/2020   05:09 PM\n          CUSTOMER COPY ***",
+      "ocr_confidence": 97.97,
+      "width": 240,
+      "height": 704,
+      "avg_char_width": 7.9392,
+      "avg_line_height": 11.6097,
+      "conf_amount": 83,
+      "source_locations": {
+        "date": [
+          [
+            {
+              "y": 561,
+              "x": 80
+            },
+            {
+              "y": 561,
+              "x": 161
+            },
+            {
+              "y": 576,
+              "x": 161
+            },
+            {
+              "y": 576,
+              "x": 80
+            }
+          ]
+        ],
+        "total": [
+          [
+            {
+              "y": 289,
+              "x": 218
+            },
+            {
+              "y": 288,
+              "x": 266
+            },
+            {
+              "y": 300,
+              "x": 266
+            },
+            {
+              "y": 301,
+              "x": 218
+            }
+          ]
+        ],
+        "receipt_no": [
+          [
+            {
+              "y": 435,
+              "x": 129
+            },
+            {
+              "y": 435,
+              "x": 223
+            },
+            {
+              "y": 447,
+              "x": 223
+            },
+            {
+              "y": 447,
+              "x": 129
+            }
+          ]
+        ],
+        "subtotal": [
+          [
+            {
+              "y": 249,
+              "x": 218
+            },
+            {
+              "y": 249,
+              "x": 268
+            },
+            {
+              "y": 262,
+              "x": 268
+            },
+            {
+              "y": 262,
+              "x": 218
+            }
+          ]
+        ],
+        "merchant_name": [
+          [
+            {
+              "y": 410,
+              "x": 36
+            },
+            {
+              "y": 410,
+              "x": 74
+            },
+            {
+              "y": 422,
+              "x": 74
+            },
+            {
+              "y": 422,
+              "x": 36
+            }
+          ]
+        ],
+        "doc": [
+          [
+            {
+              "y": 4,
+              "x": 23
+            },
+            {
+              "y": 4,
+              "x": 288
+            },
+            {
+              "y": 779,
+              "x": 288
+            },
+            {
+              "y": 779,
+              "x": 23
+            }
+          ]
+        ],
+        "tax": [
+          [
+            {
+              "y": 269,
+              "x": 218
+            },
+            {
+              "y": 268,
+              "x": 251
+            },
+            {
+              "y": 280,
+              "x": 251
+            },
+            {
+              "y": 281,
+              "x": 218
+            }
+          ]
+        ],
+        "merchant_address": [
+          [
+            {
+              "y": 435,
+              "x": 33
+            },
+            {
+              "y": 435,
+              "x": 113
+            },
+            {
+              "y": 448,
+              "x": 113
+            },
+            {
+              "y": 448,
+              "x": 33
+            }
+          ]
+        ]
+      }
+    }
+  ]
+}
